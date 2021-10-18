@@ -17,11 +17,11 @@
   </label>
 
    <a href="Controller?opcion=mostrar" class="menu-item blue"> <i class="fas fa-eye"></i> </a>
-   <a href="Controller?opcion=mostrar " class="menu-item green"> <i class="fas fa-edit"></i> </a>
-   <a href="Controller?opcion=salario" class="menu-item red"> <i class="fa fa-heart"></i> </a>
-   <a href="Controller?opcion=buscaSalario" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
-   <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
-   <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+   <a href="Controller?opcion=buscaEmpleado " class="menu-item green"> <i class="fas fa-edit"></i> </a>
+   <a href="Controller?opcion=creaEmpleado" class="menu-item red"> <i class="fas fa-plus"></i> </a>
+   <a href="Controller?opcion=buscaSalario" class="menu-item purple"> <i class="far fa-money-bill-alt"></i> </a>
+   <a href="vista/Error.jsp" class="menu-item orange"> <i class="fas fa-exclamation-triangle"></i> </a>
+   <a href="vista/Error.jsp" class="menu-item lightblue"> <i class="fas fa-exclamation-triangle"></i></i> </a>
 </nav>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>

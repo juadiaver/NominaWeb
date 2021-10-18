@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>Error en la busqueda no se encuentra empleados con ese Dni</p>
+<p>ESTA PAGINA AUN ESTA EN CONSTRUCCION</p>
+<br>
+<button onclick="window.location.href='javascript:history.back()'">Volver</button>
 </body>
 </html>
