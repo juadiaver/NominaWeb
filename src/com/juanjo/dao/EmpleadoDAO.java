@@ -10,7 +10,7 @@ import java.util.Map;
 import com.juanjo.model.Conexion;
 import com.juanjo.model.DatosNoCorrectosException;
 import com.juanjo.model.Empleado;
-import com.mysql.jdbc.Connection;
+import com.juanjo.model.Nomina;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,6 +39,19 @@ public class EmpleadoDAO {
 			String sexo = String.valueOf(emp.getSexo());
 			statement.setString(4, sexo);
 			statement.setString(5, emp.getDni());
+
+			statement.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
+		
+		try {
+			Nomina nomina = new Nomina();
+			statement = con.getJdbcConnection().prepareStatement("INSERT INTO nominas (dni, sueldo) VALUES(?,?)");
+
+			statement.setInt(2, nomina.sueldo(emp));
+			statement.setString(1, emp.getDni());
 
 			statement.executeUpdate();
 
@@ -310,6 +323,18 @@ public class EmpleadoDAO {
 			String sexo = String.valueOf(emp.getSexo());
 			statement.setString(4, sexo);
 			statement.setString(5, emp.getDni());
+
+			statement.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
+		try {
+			Nomina nomina = new Nomina();
+			statement = con.getJdbcConnection().prepareStatement("UPDATE nominas SET sueldo=? WHERE dni=?");
+
+			statement.setInt(1, nomina.sueldo(emp));
+			statement.setString(2, emp.getDni());
 
 			statement.executeUpdate();
 
