@@ -193,7 +193,6 @@ public class EmpleadoController extends HttpServlet {
 				System.out.println(dniB);
 				List<Empleado> listaEmpleado = new ArrayList<>();
 				listaEmpleado = empDAO.obtenerEmpleadoDni(dniB);
-				System.out.println(listaEmpleado.size());
 				request.setAttribute("listaEmpleado", listaEmpleado);
 				RequestDispatcher requesDispatcher = request.getRequestDispatcher("vista/Mostrar.jsp");
 				requesDispatcher.forward(request, response);
@@ -294,15 +293,10 @@ public class EmpleadoController extends HttpServlet {
 				String dniB = request.getParameter("dniB");
 				Map<String, Integer> salario = new HashMap<String, Integer>();
 				salario = empDAO.mostrarSalario(dniB);
-
-				if (salario.isEmpty()) {
-					RequestDispatcher requesDispatcher = request.getRequestDispatcher("vista/BuscaSalario.jsp");
-					requesDispatcher.forward(request, response);
-				} else {
-					request.setAttribute("salario", salario);
-					RequestDispatcher requesDispatcher = request.getRequestDispatcher("vista/BuscaSalario.jsp");
-					requesDispatcher.forward(request, response);
-				}
+				request.setAttribute("salario", salario);
+				RequestDispatcher requesDispatcher = request.getRequestDispatcher("vista/BuscaSalario.jsp");
+				requesDispatcher.forward(request, response);
+				
 
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
